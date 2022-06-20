@@ -1,0 +1,225 @@
+:root {
+  --Soft-red: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  background-color: var(--Cream);
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
+  font-family: "Overpass", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.wrapper {
+  max-width: 27em;
+  margin: 8em auto;
+}
+
+.balance-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0.8em;
+  border-radius: 1em;
+  background-color: var(--Soft-red);
+  color: var(--Very-pale-orange);
+  width: clamp(140px, 90vw, 400px);
+}
+
+.balance-digit{
+  padding: clamp(0.2em, 0em, 3em);
+  
+}
+
+.balance-digit h1 {
+  font-weight: 400;
+  padding-left: 0.2em;
+  /* font-size: clamp(1rem, 10vw, 1.5rem); */
+  width: 100%;
+}
+
+.balance-digit p {
+  font-weight: 400;
+  padding-left: 0.5em;
+  /* font-size: 0.8rem; */
+}
+
+.logo img {
+  width: 4em;
+  padding-right: 0.5em;
+}
+
+.chart-section {
+  
+  background-color: var(--Very-pale-orange);
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em auto;
+  /* width: 100%; */
+  /* width: clamp(140px, 90vw, 500px); */
+   
+}
+
+.chart-section h2 {
+  color: var(--Dark-brown);
+  padding-left: 0.3em;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+/* 
+.satistics-candle-container {
+  border: 1px solid royalblue;
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-around;
+} */
+
+
+.chart-stick {
+  border: 1px solid yellowgreen;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: flex-end;
+  margin: 0.8em auto;
+  width: 100%;
+  max-width: 35em;
+  /* height: 20vh; */
+  background-color: var(--Cream);
+  gap: 0.5em;
+}
+.chart-stick .chart{
+  width: 100%;
+  /* max-width: 3.5em; */
+  
+}
+
+.chart-stick .each-col-stick{
+  text-align: center;
+}
+
+.chart .column{
+  width: 100%;
+  /* height: auto;  */
+  /* border: 1px solid red;  */
+  border: 1px solid yellowgreen; 
+  background-color: var(--Soft-red);
+  text-align: center;
+  border-radius: 0.25em;
+}
+
+.chart-stick .column:hover .title{ 
+  opacity: 1;
+}
+
+.chart-stick .title{
+  background-color: var(--Dark-brown);
+  width: 100%;
+  color: white;
+  text-align: center;
+  border-radius: 0.5em;
+  padding: 0.3em;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  opacity: 1;
+  transition: 0.3s ease  opacity;
+}
+
+.chart-stick .col-stick{
+  display: inline-block;
+  width: 80%;
+  background: var(--Soft-red);
+  transition: 0.3s ease color;
+  cursor: pointer;
+}
+
+.chart-stick  .col-stick:hover{
+  background: var(--Soft-red);
+}
+
+.chart-stick .col-stick.max{
+  background: var(--Cyan);
+}
+
+.chart-stick .col-stick.max:hover{
+  background: var(--Very-pale-orange);
+}
+
+.chart-stick ,.each-col-stick .day{
+  color: var(--Medium-brown);
+  font-size: 0.8rem;
+}
+
+.chart-section hr{
+  margin: 0.8em  0.5em;
+  background:   var(--Cream);
+  height: 0.1em;
+  border: none;
+}
+
+.month-figures{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* gap: 8.5em; */
+    margin: 0.5em;
+}
+.month-figures .left{
+  width: 100%;
+}
+
+
+.month-figures .left p{
+  color: var(--Medium-brown);
+  font-size: 0.8rem;
+  /* border: 1px solid red; */
+
+}
+
+.month-figures .left h1{
+  color: var(--Dark-brown);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.month-figures .right h5{
+  color: var(--Dark-brown);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: right;
+  /* border: 1px solid red; */
+}
+
+.month-figures .right p{
+  color: var(--Medium-brown);
+  text-align: right;
+  
+}
+
+.month-figures .right{
+  text-align:center;
+  width: 100%;
+}
+
+@media (max-width: 600px){
+  .balance-section, .chart-section ,.month-figures{
+    padding: 0.5em;
+    border-radius: 0.5em;
+  }
+  .chart-stick .column{ width: 45px;}
+}
