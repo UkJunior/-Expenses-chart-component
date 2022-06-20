@@ -17,7 +17,7 @@ import data from './data.json' assert{ type: "json"};
 //  console.log(objectToArray(data));
 // convert data into array
   // let dataArray = Object.values(data);
-
+  
 let chartStick = document.querySelector('.chart-stick');
 data.forEach(function(item){
     // console.log('item.day');
@@ -25,20 +25,41 @@ data.forEach(function(item){
     let column = document.createElement('div');
     let days = document.createElement('div')
     chart.classList = 'chart';
+    // let dollorsign = $;
     chart.innerHTML = 
     `<div class="">
-    <div class="chart title">${item.amount}</div>
+    <div class=" title active"><span>$</span>${item.amount}</div>
     </div>`;
     // chart.style.backgroundColor = item.color;
 
     // divide multiply the amount by 2 and add px to make height
-    let height = (item.amount)* 2 + "px";
-
-    
+    let height = (item.amount)* 2.5 + "px";
     days.innerHTML = `${item.day}`;
     column.style.height = `${height}`;
-    column.setAttribute('class', 'column');
+    if(item.day === "wed"){
+    
+      column.setAttribute('class', 'active');
+    } else{
+        column.setAttribute('class', 'column');
+      }
     chart.appendChild(column);
     chart.append(days);
     chartStick.appendChild(chart);
-})
+    // console.log(column.classList);
+    // if()
+    
+  })
+  
+  
+
+
+// function addTitle(){
+
+//   let newColumn = column;
+  
+//   for(let x in newColumn){
+//     console.log(x);
+//   }
+// }
+// name(column)
+      // console.log(column);
