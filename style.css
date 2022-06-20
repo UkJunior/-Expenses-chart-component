@@ -131,7 +131,7 @@ body {
 
 .active{
   width: 100%;
-  max-width: 3em;
+  max-width: 3.2em;
   margin: 0 auto;
   background-color: var(--Cyan);
   text-align: center;
