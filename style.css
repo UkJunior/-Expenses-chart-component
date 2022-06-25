@@ -6,6 +6,7 @@
   --Cream: hsl(27, 66%, 92%);
   --Very-pale-orange: hsl(33, 100%, 98%);
 }
+
 * {
   padding: 0;
   margin: 0;
@@ -13,8 +14,6 @@
 }
 
 body {
-  width: 100%;
-  max-width: 1440px;
   background-color: var(--Cream);
   font-family: "DM Sans", sans-serif;
   font-family: "Inter", sans-serif;
@@ -24,12 +23,17 @@ body {
   font-size: 15px;
 }
 
+main{
+  width: 100%;
+  max-width: 1440px;
+}
+
 .wrapper {
   max-width: 27em;
   margin: 8em auto;
 }
 
-.balance-section{
+.balance-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,22 +45,19 @@ body {
   width: clamp(140px, 90vw, 400px);
 }
 
-.balance-digit{
+.balance-digit {
   padding: clamp(0.2em, 0em, 3em);
-  
 }
 
 .balance-digit h1 {
   font-weight: 400;
   padding-left: 0.2em;
-  /* font-size: clamp(1rem, 10vw, 1.5rem); */
   width: 100%;
 }
 
 .balance-digit p {
   font-weight: 400;
   padding-left: 0.5em;
-  /* font-size: 0.8rem; */
 }
 
 .logo img {
@@ -65,14 +66,10 @@ body {
 }
 
 .chart-section {
-  
   background-color: var(--Very-pale-orange);
   border-radius: 1em;
   padding: 1em;
   margin: 1em auto;
-  /* width: 100%; */
-  /* width: clamp(140px, 90vw, 500px); */
-   
 }
 
 .chart-section h2 {
@@ -81,74 +78,76 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
 }
-/* 
-.satistics-candle-container {
-  border: 1px solid royalblue;
-  margin-top: 0.5em;
-  display: flex;
-  justify-content: space-around;
-} */
-
 
 .chart-stick {
-  border: 1px solid yellowgreen;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  align-items: flex-end;
-  margin: 0.8em auto;
+  align-items: center;
   width: 100%;
   max-width: 35em;
-  /* height: 20vh; */
-  /* gap: 0.5em; */
+  height: 15em;
+  margin-bottom: -2em;
 }
 
-.chart-stick .chart{
-  width: 100%;
-  /* border: 1px solid yellowgreen; */
-  display: block;
-  justify-content: center;
+.chart-stick .chart {
+  width: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  /* max-width: 3.5em; */
-  text-align: center;
+  height: 90%;
+  margin-top: -1.3em;
 }
 
-.chart-stick .each-col-stick{
-  text-align: center;
-}
-
-.chart .column{
+.chart .column {
   width: 100%;
-  max-width: 3.2em;
-  margin: 0 auto;
   background-color: var(--Soft-red);
-  text-align: center;
   border-radius: 0.25em;
-  margin-bottom: 0.5em;
-  transition: 0.3s ease color;
+  /* height: calc(100% - 2.5em - 1.5em); */
   cursor: pointer;
+  margin-bottom: 0.5em;
 }
 
-.active{
+.chart .title {
+  width: 5em;
+  padding: 0.5em ;
+  margin-bottom: 0.8em;
+  background-color: var(--Dark-brown);
+  color: white;
+  font-size: 0.65rem;
+  text-align: center;
+  border-radius: 0.3em;
+  height: 2.5em;
+  display: none;
+}
+
+.chart .days {
   width: 100%;
-  max-width: 3.2em;
-  margin: 0 auto;
+  height: 1.5em;
+}
+
+.chart.active  .column {
   background-color: var(--Cyan);
-  text-align: center;
-  border-radius: 0.25em;
-  margin-bottom: 0.5em;
-  transition: 0.3s ease color;
-  cursor: pointer;
 }
 
-.chart-stick .column:hover { 
-  opacity: 0.7;
-}
-.chart-stick .active:hover { 
+/* .chart.active  .title {
+  display: block;
+} */
+
+.chart:hover .column{
   opacity: 0.7;
 }
 
-.chart-stick .title{
+.chart:hover .title{
+display: block;
+}
+
+.chart-stick .active:hover {
+  opacity: 0.7;
+}
+
+.chart-stick .show {
   background-color: var(--Dark-brown);
   width: 100%;
   min-width: 4em;
@@ -159,91 +158,89 @@ body {
   font-size: 0.8rem;
   margin-bottom: 0.5em;
   opacity: 1;
-  transition: 0.3s ease  opacity;
+  transition: 0.3s ease opacity;
 }
 
-
-
-/* .chart-stick .column:hover .title{
-  border: 1px solid blue;
-display: none;
-} */
-
-.chart-stick .col-stick{
-  display: inline-block;
-  width: 80%;
-  background: var(--Soft-red);
-}
-
-
-.chart-stick .col-stick.max{
-  background: var(--Cyan);
-}
-
-.chart-stick .col-stick.max:hover{
-  background: var(--Very-pale-orange);
-}
-
-.chart-stick ,.each-col-stick .day{
-  color: var(--Medium-brown);
-  font-size: 0.8rem;
-}
-
-.chart-section hr{
-  margin: 1em  0.5em;
-  background:   var(--Cream);
+.chart-section hr {
+  margin: 1em 0.5em;
+  background: var(--Cream);
   height: 0.1em;
   border: none;
 }
 
-.month-figures{
+.month-figures {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* gap: 8.5em; */
-    margin: 0.5em;
+  margin: 0.5em;
 }
-.month-figures .left{
+
+.month-figures .left {
   width: 100%;
 }
 
-
-.month-figures .left p{
+.month-figures .left p {
   color: var(--Medium-brown);
   font-size: 0.8rem;
-  /* border: 1px solid red; */
-
 }
 
-.month-figures .left h1{
+.month-figures .left h1 {
   color: var(--Dark-brown);
   font-weight: 700;
   font-size: 1.5rem;
 }
 
-.month-figures .right h5{
+.month-figures .right h5 {
   color: var(--Dark-brown);
   font-size: 1rem;
   font-weight: 700;
   text-align: right;
-  /* border: 1px solid red; */
 }
 
-.month-figures .right p{
+.month-figures .right p {
   color: var(--Medium-brown);
   text-align: right;
-  
 }
 
-.month-figures .right{
-  text-align:center;
+.month-figures .right {
+  text-align: center;
   width: 100%;
 }
 
-@media (max-width: 600px){
-  .balance-section, .chart-section ,.month-figures{
+@media (max-width: 600px) {
+  .balance-section,
+  .chart-section,
+  .month-figures {
     padding: 0.5em;
     border-radius: 0.5em;
+    width: clamp(140px, 90vw, 375px);
   }
-  .chart-stick .column{ width: 45px;}
+
+  .chart-stick .column {
+    width: 42px;
+    margin: 0.8em;
+  }
+
+  .chart .title{
+    width: clamp(5em, 5vw,375px);
+  }
+  
+.month-figures{
+  width: clamp(100px, 100%, 96%);
+}
+
+}
+
+@media (max-width:480px){
+  .chart-stick .chart{
+    width: 2.5em;
+  }
+
+  .chart .column {
+    width: 100%;
+  }
+
+    .chart .title{
+      width: 4.5em;
+    }
 }
